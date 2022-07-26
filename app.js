@@ -3,6 +3,7 @@ const express = require("express");
 const { body, validationResult } = require("express-validator");
 const qrcode = require("qrcode");
 const axios = require("axios");
+const port = process.env.PORT || 8000;
 const socketIO = require("socket.io");
 const http = require("http");
 const fileUpload = require("express-fileupload");
@@ -153,6 +154,6 @@ app.post(
   }
 );
 
-server.listen(8000, function () {
-  console.log("App Running on 8000");
+server.listen(port, function () {
+  console.log(`App Running on ${port}`);
 });
